@@ -1,0 +1,96 @@
+@media only screen and (min-width: 600px) {
+  .person-img {
+    width: 10% !important;
+  }
+
+  .right-col {
+    @include displayGrid(start, start, 2, 1em);
+
+    .card {
+      margin: 0.7em 0;
+    }
+
+    .work,
+    .play {
+      margin-top: 2em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .flex-container {
+    @include displayFlex(start, start, 1.5em);
+  }
+
+  .left-col {
+    padding-bottom: 0.5em;
+    padding: 0;
+
+    .person-info {
+      display: block;
+      position: static;
+
+      .person-img {
+        width: 34% !important;
+      }
+
+      .person-name {
+        margin: 2em 0 3.6em;
+
+        .name {
+          font-size: 2.5rem;
+          width: 4em;
+        }
+      }
+    }
+
+    .period {
+      display: block;
+      margin: 1em 1.5em 0;
+
+      li {
+        margin: 1.5em 0;
+      }
+
+      & > :nth-child(2) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .right-col {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5em;
+
+    .card {
+      margin: 0;
+      width: 14.8rem;
+      min-height: 14.5rem;
+
+      .content {
+        height: 80%;
+
+        .time {
+          display: block;
+          margin-top: 1.8em;
+
+          .current {
+            font-size: 3rem;
+          }
+
+          .last-week {
+            margin-top: 0.5em;
+          }
+        }
+      }
+    }
+  }
+
+  .main-container {
+    @include displayFlex(center, center, 0);
+    max-width: none;
+    padding: none;
+    height: 100vh;
+  }
+}

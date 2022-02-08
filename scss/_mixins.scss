@@ -1,0 +1,14 @@
+@mixin displayFlex($content, $item, $gap) {
+  display: flex;
+  justify-content: $content;
+  align-items: $item;
+  gap: $gap;
+}
+
+@mixin displayGrid($content, $item, $column, $gap) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  justify-content: $content;
+  align-items: $item;
+  gap: $gap;
+}

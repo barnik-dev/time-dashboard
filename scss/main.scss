@@ -1,0 +1,137 @@
+@import "./colors", "./base", "./mixins";
+
+.left-col {
+  position: relative;
+  background-color: $dark-blue;
+  padding: 1.5em;
+  border-radius: 20px;
+
+  .person-info {
+    @include displayFlex(start, center, 1em);
+    background-color: $blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 1.5em;
+    border-radius: 20px;
+
+    .person-img {
+      width: 25%;
+      border: 2px solid $pale-blue;
+      border-radius: 100%;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-top: 0.1em;
+    }
+  }
+
+  .period {
+    @include displayFlex(space-between, center, 0);
+    margin-top: 8em;
+    color: $pale-blue;
+
+    li {
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+
+    & > :nth-child(2) {
+      margin-left: 0.6em;
+    }
+  }
+}
+
+.right-col {
+  .card {
+    position: relative;
+    padding: 1.5em;
+    border-radius: 20px;
+    margin: 2em 0;
+    min-height: 9.6rem;
+    overflow: hidden;
+
+    .icon {
+      position: absolute;
+      right: 22px;
+      top: -12px;
+    }
+
+    .content {
+      background-color: $dark-blue;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 1.5em;
+      border-radius: 20px;
+
+      &:hover {
+        background-color: $desaturated-blue;
+        cursor: pointer;
+      }
+
+      .title {
+        @include displayFlex(space-between, center, 0);
+      }
+
+      .time {
+        @include displayFlex(space-between, center, 0);
+        margin-top: 0.5em;
+
+        .current {
+          font-size: 2rem;
+          font-weight: 300;
+        }
+
+        .last-week {
+          opacity: 0.6;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .work {
+    background-color: $light-red;
+  }
+  .play {
+    background-color: $soft-blue;
+  }
+  .study {
+    background-color: $light-red-s;
+  }
+  .exercise {
+    background-color: $lime-green;
+
+    .icon {
+      top: 0;
+    }
+  }
+  .social {
+    background-color: $violet;
+  }
+  .self-care {
+    background-color: $soft-orange;
+  }
+}
+
+.highlight {
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+.main-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 3em 1em;
+}
+
+@import "./media_querries";
